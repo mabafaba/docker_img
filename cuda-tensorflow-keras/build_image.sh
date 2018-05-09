@@ -1,3 +1,6 @@
 #! /bin/bash
 
-docker build - < Dockerfile --tag cuda-tensorflow-keras:latest
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+sudo docker build $DIR -t cuda_tensorflow_keras
