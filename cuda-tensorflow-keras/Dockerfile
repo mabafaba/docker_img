@@ -64,8 +64,8 @@ USER jovyan
 WORKDIR /home/jovyan
 
 # Copy notebook config
-ENTRYPOINT ["tini", "--"]
-COPY jupyter_notebook_config.py /home/$NB_USER/.jupyter/
+# ENTRYPOINT ["tini", "--"]
+# COPY jupyter_notebook_config.py /home/$NB_USER/.jupyter/
 
 # Expose ports and start notebook server
 EXPOSE 8888
