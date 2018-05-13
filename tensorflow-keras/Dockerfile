@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 ARG python_version=3.6
-FROM nvidia/cuda:${cuda_version}-cudnn${cudnn_version}-devel
+ARG cuda_version=9.0
+ARG cudnn_version=7
+FROM tensorflow/tensorflow
 
 #FROM dataquestio/ubuntu-base
 
@@ -35,7 +37,7 @@ RUN conda install -y python=${python_version} && \
     pip install --upgrade pip && \
     pip install \
       sklearn_pandas \
-      tensorflow-gpu && \
+      tensorflow && \
     conda install \
       h5py \
       matplotlib \
