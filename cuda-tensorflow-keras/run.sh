@@ -15,7 +15,7 @@ sudo nvidia-docker run   \
     --rm  \
     -p 8888:8888  \
     -v $NOTEBOOK_DIR:/notebooks/  \
-    -v $SHELTER_REPO_PATH:/shelter_repo/  \
+    -v $SHELTER_REPO_PATH:/repo/  \
     -v $SHELTER_DATA_PATH:/media/data/  \
     cuda_tensorflow_keras
 

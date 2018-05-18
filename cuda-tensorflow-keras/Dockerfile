@@ -61,8 +61,9 @@ RUN useradd -ms /bin/bash jovyan
 USER jovyan
 WORKDIR /home/jovyan
 
-# Copy notebook config
+# Install repo and copy notebook config
 ENTRYPOINT ["tini", "--"]
+CMD ["setup_repo.sh"]
 RUN mkdir /home/jovyan/.jupyter
 COPY jupyter_notebook_config.py /home/jovyan/.jupyter/
 
