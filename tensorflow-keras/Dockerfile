@@ -43,14 +43,6 @@ USER $NB_USER
 WORKDIR /home/$NB_USER
 RUN mkdir /home/$NB_USER/.jupyter
 
-# Install anaconda
-#RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O ~/anaconda.sh && \
-#    /bin/bash ~/anaconda.sh -b -p /opt/conda && \
-#    rm ~/anaconda.sh && \
-#    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-#    echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-#    echo "conda activate base" >> ~/.bashrc
-
 RUN cd /tmp && \
     mkdir -p $CONDA_DIR && \
     curl -k https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh -o Miniconda3-latest-Linux-x86_64.sh && \
@@ -99,7 +91,7 @@ USER root
 RUN echo "root:shelter" | chpasswd
 
 ENTRYPOINT ["tini", "--"]
-CMD ["setup_repo.sh"]
+CMD ["/usr/local/bin/setup_repo.sh"]
 
 # Add local files
 COPY jupyter_notebook_config.py /home/$NB_USER/.jupyter/
@@ -111,7 +103,3 @@ USER $NB_USER
 
 # Expose ports and start notebook server
 EXPOSE 8888
-
-CMD jupyter notebook --port=8888  \
-                     --ip=0.0.0.0  \
-                     --notebook-dir=/notebooks/

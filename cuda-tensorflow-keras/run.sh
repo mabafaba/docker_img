@@ -17,6 +17,9 @@ sudo nvidia-docker run   \
     -v $NOTEBOOK_DIR:/notebooks/  \
     -v $SHELTER_REPO_PATH:/repo/  \
     -v $SHELTER_DATA_PATH:/media/data/  \
-    cuda_tensorflow_keras
+    -h 0.0.0.0 \
+    --name shelter_container \
+    tensorflow_keras
 
-#    --net=host
+# TODO: Resolve hostname hack:
+# https://github.com/jupyter/notebook/issues/3605
