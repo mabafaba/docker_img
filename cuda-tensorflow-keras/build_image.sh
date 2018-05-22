@@ -3,4 +3,4 @@
 set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-sudo docker build $DIR -t cuda_tensorflow_keras
+sudo nvidia-docker build $DIR -t cuda_tensorflow_keras

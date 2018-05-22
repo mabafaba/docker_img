@@ -3,7 +3,8 @@
 ARG python_version=3.6
 ARG cuda_version=9.0
 ARG cudnn_version=7
-FROM tensorflow/tensorflow
+#FROM tensorflow/tensorflow
+FROM nvidia/cuda:9.0-cudnn7-devel
 
 #FROM dataquestio/ubuntu-base
 
@@ -20,6 +21,7 @@ RUN  apt-get update && apt-get -y install \
       sudo \
       vim \
       git \
+      curl \
       wget
 
 RUN rm -rf /var/lib/apt/lists/*
