@@ -9,9 +9,9 @@
 # export SHELTER_REPO_PATH=/Users/Marcus/Documents/CS/projects/classify_shelters/
 # export SHELTER_DATA_PATH=/Users/Marcus/googledrive/shelterdata/
 
-export NOTEBOOK_DIR=/home/marcus/Documents/notebooks/
-export SHELTER_REPO_PATH=/home/marcus/Documents/projects/classify_shelters/
-export SHELTER_DATA_PATH=/home/marcus/Documents/projects/shelter_data/
+export NOTEBOOK_DIR=/Users/m/notebooks
+export SHELTER_REPO_PATH=/Users/m/classifyshelters
+export SHELTER_DATA_PATH=/Volumes/2/shelterdata
 
 sudo nvidia-docker run   \
     --privileged  \

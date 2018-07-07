@@ -2,9 +2,9 @@
 
 # Set your environment variables before running the container -
 # You shouldn't have any whitespaces or underscores in mount paths:
-# export NOTEBOOK_DIR=/Users/Marcus/Documents/CS/projects/notebooks/
-# export SHELTER_REPO_PATH=/Users/Marcus/Documents/CS/projects/classify_shelters/
-# export SHELTER_DATA_PATH=/Users/Marcus/googledrive/shelterdata/
+export NOTEBOOK_DIR=/Users/m/notebooks
+export SHELTER_REPO_PATH=/Users/m/classifyshelters
+export SHELTER_DATA_PATH=/Volumes/2/shelterdata
 
 sudo docker run   \
     --privileged  \
