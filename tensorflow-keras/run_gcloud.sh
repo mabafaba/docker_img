@@ -4,7 +4,7 @@
 # You shouldn't have any whitespaces or underscores in mount paths:
 export NOTEBOOK_DIR=/notebooks
 export SHELTER_REPO_PATH=/classifyshelters
-export SHELTER_DATA_PATH=/Volumes/2/shelterdata
+export SHELTER_DATA_PATH=/shelterdata
 
 sudo docker run   \
     --privileged  \
