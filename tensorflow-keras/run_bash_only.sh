@@ -1,0 +1,1 @@
+docker exec -it tensorflow_keras:latest /bin/bash
